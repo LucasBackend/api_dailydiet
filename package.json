@@ -1,0 +1,42 @@
+{
+  "name": "dailydiet",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server",
+    "knex": "node --no-warnings --loader tsx ./node_modules/knex/bin/cli.js",
+    "migrate:make": "npm run knex migrate:make --knexfile=./src/database.ts",
+    "build": "tsup src --out-dir build",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "npx vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
+  }
+}
